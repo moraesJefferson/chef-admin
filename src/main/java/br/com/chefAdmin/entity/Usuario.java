@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
+//import javax.validation.constraints.NotBlank;
 
 import br.com.caelum.stella.bean.validation.CPF;
 import br.com.chefAdmin.util.BaseEntity;
@@ -20,14 +20,11 @@ public class Usuario extends BaseEntity{
 	private Long id;
 	
 	@CPF
-	@NotBlank
 	@Column(unique = true)
 	private String cpf;
 	
-	@NotBlank
 	private String email;
 	
-	@NotBlank
 	private String senha;
 	
 	@Column(nullable = false)

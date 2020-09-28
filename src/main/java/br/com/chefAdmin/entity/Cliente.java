@@ -7,11 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.JoinColumn;
-import javax.validation.constraints.NotBlank;
+//import javax.validation.constraints.NotBlank;
 
 import br.com.chefAdmin.util.BaseEntity;
 
@@ -25,7 +23,6 @@ public class Cliente extends BaseEntity{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
 	private String nome;
 	
 	@ManyToOne(optional = true)
