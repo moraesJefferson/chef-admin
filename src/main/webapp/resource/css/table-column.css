@@ -1,0 +1,59 @@
+.col-agente-nome-guerra{
+
+   width: 70px;
+
+}
+
+.col-agente-matricula{
+
+   width: 70px;
+
+}
+
+.col-agente-quantidade{
+
+   width: 70px;
+
+}
+
+.col-agente-tempo-medio-lavratura{
+
+   width: 70px;
+
+}
+
+.col-resultado-xsm{
+	
+	width: 10px;
+}
+
+.col-resultado-sm{
+	
+	width: 45px;
+}
+
+.col-resultado-md{
+	
+	width: 70px;
+}
+
+.col-resultado-lg{
+	
+	width: 100px;
+}
+
+.col-resultado-xlg{
+	
+	width: 200px;
+}
+
+.col-resultado-xxlg{
+	
+	width: 400px;
+}
+
+.cabecalho{
+	
+	text-align: center;
+	
+}

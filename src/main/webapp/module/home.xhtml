@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+					  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/template/main.xhtml">
+
+<ui:define name="headHtml">
+		 <link href="#{request.contextPath}/resource/css/all.min.css" rel="stylesheet" />
+  		<!-- CSS Files -->
+ 		 <link href="#{request.contextPath}/resource/css/argon-dashboard.css?v=1.1.1" rel="stylesheet" />
+</ui:define>
+
+<ui:define name="conteudo">
+	
+	<div class="row">
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Home </h1>
+					</div>
+	</div>
+	
+   	<h:form id="formPaginaPrincipal" >
+   		<div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+	              <a href="#{request.contextPath}/module/paciente/gerenciar.xhtml">
+	                <div class="card-body">
+	                  <div class="row">
+	                    <div class="col">
+	                      <h5 class="card-title text-uppercase text-muted mb-0">Iniciar Pedido</h5>
+	                    </div>
+	                    <div class="col-auto">
+	                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+	                       <i class="fa fa-user" style="font-size: 20px"></i>
+	                      </div>
+	                    </div>
+	                  </div>
+	                </div>
+	               </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+              <a href="#{request.contextPath}/module/leito/gerenciar.xhtml">
+	          		<div class="card-body">
+	                  <div class="row">
+	                    <div class="col">
+	                      <h5 class="card-title text-uppercase text-muted mb-0">Histórico de pedidos</h5>
+	                    </div>
+	                    <div class="col-auto">
+	                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+	                       <i class="fa fa-history" style="font-size: 20px"></i>
+	                      </div>
+	                    </div>
+	                  </div>
+	                </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+              <a href="#{request.contextPath}/module/leito-internacao/gerenciar.xhtml">
+	                <div class="card-body">
+	                  <div class="row">
+	                    <div class="col">
+	                      <h5 class="card-title text-uppercase text-muted mb-0">Cardápio</h5>
+	                    </div>
+	                    <div class="col-auto">
+	                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+	                       <i class="fa fa-bars" style="font-size: 20px"></i>
+	                      </div>
+	                    </div>
+	                  </div>
+	                </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+              <a href="#{request.contextPath}/module/clinica/gerenciar.xhtml">
+	                <div class="card-body">
+	                  <div class="row">
+	                    <div class="col">
+	                      <h5 class="card-title text-uppercase text-muted mb-0">Encerrar sessão</h5>
+	                    </div>
+	                    <div class="col-auto">
+	                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+	                       <i class="fa fa-sign-out" style="font-size: 20px"></i>
+	                      </div>
+	                    </div>
+	                  </div>
+	                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   	</h:form>
+	</ui:define>
+	
+	<ui:define name="script-area">
+	
+	<script>	
+		$(document).ready(function() {
+				pageSetUp();
+			})
+	</script>
+
+		
+	
+
+	</ui:define>
+	
+</ui:composition>
+
+</html>
