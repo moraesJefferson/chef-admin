@@ -4,7 +4,7 @@
 	MIT-style license.
 */
 
-;(function($) {
+(function($) {
 
 	$.fn.reflect = function(options) {
 		options = $.extend({

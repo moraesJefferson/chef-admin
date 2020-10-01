@@ -22,13 +22,6 @@
 
 			<link rel="stylesheet"
 				href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
-				<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-				<script
-					src="#{request.contextPath}/resource/js/jquery.reflection.js"></script>
-				<script
-					src="#{request.contextPath}/resource/js/jquery.cloud9carousel.js"></script>
 	</ui:define>
 
 	<ui:define name="conteudo">
@@ -73,13 +66,20 @@
 	</ui:define>
 
 	<ui:define name="script-area">
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
+		<script
+			src="#{request.contextPath}/resource/js/jquery.reflection.js"></script>
+		<script
+			src="#{request.contextPath}/resource/js/jquery.cloud9carousel.js"></script>
 		<script>	
 		
 		$(document).ready(function() {
 			pageSetUp();
-			
-			(function($) {
+		})
+		
+		$(function() {
+				console.log("entrou na function");
 		        var showcase = $("#showcase")
 		
 		        showcase.Cloud9Carousel( {
@@ -126,9 +126,7 @@
 		                    $('.nav > .right').click()
 		              }
 		        })
-		  })
-			
-		})
+		       })
 
   	</script>
 

@@ -189,10 +189,10 @@
     }
 
     this.autoPlay = function() {
-      this.autoPlayTimer = setInterval(
+      /*this.autoPlayTimer = setInterval(
         function() { self.go( self.autoPlayAmount ) },
         this.autoPlayDelay
-      );
+      );*/
     }
 
     this.enableAutoPlay = function() {

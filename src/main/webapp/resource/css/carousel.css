@@ -6,7 +6,7 @@ html, body {
 }
 
 #wrap {
-      width: 980px;
+      min-width: 980px;
       left: -490px;
       top: 6%;
       margin-top: 52px;
@@ -21,11 +21,13 @@ html, body {
 
 #showcase img {
       cursor: pointer;
-      opacity: 0.6;
+      width: 25rem;
+      height: 25rem;
+      border-radius: 500px;
 }
 
 #item-title {
-      color: #fff;
+      color: #333;
       font-size: 30px;
       letter-spacing: 0.13em;
       text-align: center;
