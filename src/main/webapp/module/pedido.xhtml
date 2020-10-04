@@ -18,10 +18,10 @@
 			rel="stylesheet" />
 
 		<link rel="stylesheet"
-			href="#{request.contextPath}/resource/css/carousel.css"/>
+			href="#{request.contextPath}/resource/css/carousel.css" />
 
-			<link rel="stylesheet"
-				href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</ui:define>
 
 	<ui:define name="conteudo">
@@ -40,25 +40,53 @@
 					<!-- Card stats -->
 					<div class="row">
 						<div id="wrap">
-							<div id="showcase">									
-								<p:graphicImage  value ="/resource/img/carousel_images/entrada.png" alt="Entradas" class="cloud9-item"/> 
-								<h:graphicImage  value ="/resource/img/carousel_images/salada.jpg" alt="Saladas" class="cloud9-item"/> 
-								<h:graphicImage  value ="/resource/img/carousel_images/prato.jpg" alt="Pratos" class="cloud9-item"/> 
-								<h:graphicImage  value ="/resource/img/carousel_images/sobremesa.jpg" alt="Sobremesas" class="cloud9-item"/> 
-								<h:graphicImage  value ="/resource/img/carousel_images/bebida.jpg" alt="Bebidas" class="cloud9-item"/> 
+							<div id="showcase">
+								<p:graphicImage
+									value="/resource/img/carousel_images/entrada.jpg"
+									alt="Entradas" class="cloud9-item" />
+								<h:graphicImage value="/resource/img/carousel_images/salada.jpg"
+									alt="Saladas" class="cloud9-item" />
+								<h:graphicImage value="/resource/img/carousel_images/prato.jpg"
+									alt="Pratos" class="cloud9-item" />
+								<h:graphicImage
+									value="/resource/img/carousel_images/sobremesa.jpg"
+									alt="Sobremesas" class="cloud9-item" />
+								<h:graphicImage value="/resource/img/carousel_images/bebida.jpg"
+									alt="Bebidas" class="cloud9-item" />
 							</div>
 
 							<p id="item-title">&nbsp;</p>
 
-							<div class="nav noselect">
-								<button class="left">
-									<i class="fa fa-arrow-left"></i>
-								</button>
-								<button class="right">
-									<i class="fa fa-arrow-right"></i>
-								</button>
-							</div>
 						</div>
+
+						<h:form id="form">
+							<p:carousel value="#{carouselView.cars}" headerText="Responsive"
+								var="car" itemStyle="text-align:center" responsive="true">
+								<p:panelGrid columns="2" style="width:100%;margin:10px 0px"
+									columnClasses="label,value" layout="grid"
+									styleClass="ui-panelgrid-blank">
+									<f:facet name="header">
+										<p:graphicImage name="demo/images/car/#{car.brand}.gif" />
+									</f:facet>
+
+									<h:outputText value="Id:" />
+									<h:outputText value="#{car.id}" />
+
+									<h:outputText value="Year" />
+									<h:outputText value="#{car.year}" />
+
+									<h:outputText value="Color:" />
+									<h:outputText value="#{car.color}" style="color:#{car.color}" />
+
+									<h:outputText value="Price" />
+									<h:outputText value="$#{car.price}" />
+								</p:panelGrid>
+
+								<f:facet name="footer">
+                					In total there are #{fn:length(carouselView.cars)} cars.
+       							</f:facet>
+							</p:carousel>
+						</h:form>
 					</div>
 				</div>
 			</div>
@@ -68,67 +96,65 @@
 	<ui:define name="script-area">
 		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
-		<script
-			src="#{request.contextPath}/resource/js/jquery.reflection.js"></script>
+		<script src="#{request.contextPath}/resource/js/jquery.reflection.js"></script>
 		<script
 			src="#{request.contextPath}/resource/js/jquery.cloud9carousel.js"></script>
-		<script>	
-		
-		$(document).ready(function() {
-			pageSetUp();
-		})
-		
-		$(function() {
-				console.log("entrou na function");
-		        var showcase = $("#showcase")
-		
-		        showcase.Cloud9Carousel( {
-		              yPos: 42,
-		              yRadius: 48,
-		              mirrorOptions: {
-		                    gap: 12,
-		                    height: 0.2
-		              },
-		              buttonLeft: $(".nav > .left"),
-		              buttonRight: $(".nav > .right"),
-		              autoPlay: true,
-		              bringToFront: true,
-		
-		              onRendered: showcaseUpdated,
-		              onLoaded: function() {
-		                    showcase.css( 'visibility', 'visible' )
-		                    showcase.css( 'display', 'none')
-		                    showcase.fadeIn( 1500 )
-		              }
-		        })
-		
-		        function showcaseUpdated( showcase ) {
-		              var title = $("#item-title").html(
-		                    $(showcase.nearestItem()).attr( 'alt' )
-		              )
-		
-		              var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
-		              title.css('opacity', 0.5 + (0.5 * c))
-		        }
-		
-		        $('.nav > button').click( function( e ) {
-		              var b = $(e.target).addClass( 'down' )
-		              setTimeout( function() { b.removeClass( 'down' ) }, 80)
-		        } )
-		
-		        $(document).keydown( function( e ) {
-		              switch( e.keyCode ) {
-		                    case 37:
-		                    $('.nav > .left').click()
-		                    break
-		
-		                    case 39:
-		                    $('.nav > .right').click()
-		              }
-		        })
-		       })
+		<script>
+			$(document).ready(function() {
+				pageSetUp();
+			})
 
-  	</script>
+			$(function() {
+				console.log("entrou na function");
+				var showcase = $("#showcase")
+
+				showcase.Cloud9Carousel({
+					yPos : 42,
+					yRadius : 48,
+					mirrorOptions : {
+						gap : 12,
+						height : 0.2
+					},
+					buttonLeft : $(".nav > .left"),
+					buttonRight : $(".nav > .right"),
+					autoPlay : true,
+					bringToFront : true,
+
+					onRendered : showcaseUpdated,
+					onLoaded : function() {
+						showcase.css('visibility', 'visible')
+						showcase.css('display', 'none')
+						showcase.fadeIn(1500)
+					}
+				})
+
+				function showcaseUpdated(showcase) {
+					var title = $("#item-title").html(
+							$(showcase.nearestItem()).attr('alt'))
+
+					var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
+					title.css('opacity', 0.5 + (0.5 * c))
+				}
+
+				$('.nav > button').click(function(e) {
+					var b = $(e.target).addClass('down')
+					setTimeout(function() {
+						b.removeClass('down')
+					}, 80)
+				})
+
+				$(document).keydown(function(e) {
+					switch (e.keyCode) {
+					case 37:
+						$('.nav > .left').click()
+						break
+
+					case 39:
+						$('.nav > .right').click()
+					}
+				})
+			})
+		</script>
 
 	</ui:define>
 

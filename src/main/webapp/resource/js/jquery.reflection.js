@@ -8,7 +8,7 @@
 
 	$.fn.reflect = function(options) {
 		options = $.extend({
-			height: 1/3,
+			height: 1/4,
 			opacity: 0.0
 		}, options);
 
@@ -23,7 +23,7 @@
 					if (reflection.getContext) {
 						context = reflection.getContext("2d");
 						try {
-							$(reflection).attr({width: imageWidth, height: reflectionHeight});
+							$(reflection).attr({width: imageWidth+50, height: reflectionHeight+50});
 							context.save();
 							context.translate(0, imageHeight-1);
 							context.scale(1, -1);
