@@ -1,5 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
 			  	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" 
 				xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
-					http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"/>
+					http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+								
+	<navigation-rule>
+	    <from-view-id>/module/*</from-view-id>
+	    <navigation-case>
+	      <from-outcome>carrinho</from-outcome>
+	      <to-view-id>/module/carrinho.xhtml</to-view-id>
+	      <redirect/>
+	    </navigation-case>
+	    
+	     <navigation-case>
+	      <from-outcome>menu</from-outcome>
+	      <to-view-id>/module/item-pedido.xhtml</to-view-id>
+	      <redirect/>
+	    </navigation-case>
+	    
+	    <navigation-case>
+	      <from-outcome>inicio</from-outcome>
+	      <to-view-id>/module/home.xhtml</to-view-id>
+	      <redirect/>
+	    </navigation-case>
+  	</navigation-rule>
+					
+</faces-config>

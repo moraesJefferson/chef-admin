@@ -1,10 +1,13 @@
 package br.com.chefAdmin.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import br.com.chefAdmin.util.BaseEntity;
 
@@ -17,6 +20,7 @@ public class ItemPedido extends BaseEntity{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@OneToOne
 	private Produto produto;
 	
 	private int quantidade;
@@ -28,6 +32,13 @@ public class ItemPedido extends BaseEntity{
 
 	public Long getId() {
 		return id;
+	}
+	
+	
+	public BigDecimal getTotal() {
+		BigDecimal total = new BigDecimal(0);
+		total = produto.getValor().multiply(new BigDecimal(quantidade));
+		return total;
 	}
 
 	public void setId(Long id) {
@@ -56,5 +67,15 @@ public class ItemPedido extends BaseEntity{
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
 }

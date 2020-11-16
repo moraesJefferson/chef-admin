@@ -1,6 +1,7 @@
 package br.com.chefAdmin.entity;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,6 +39,11 @@ public class Pedido extends BaseEntity{
 	public void prePersist() {
 		this.uuid = UUID.randomUUID().toString();
 	}
+	
+	public Pedido() {
+		this.listaItensPedido = new ArrayList<ItemPedido>();
+		this.total = new BigDecimal(0);
+	}
 
 	public Long getId() {
 		return id;
@@ -64,6 +70,11 @@ public class Pedido extends BaseEntity{
 	}
 	
 	public BigDecimal getTotal() {
+		this.setTotal(new BigDecimal(0));
+		for(ItemPedido item : this.listaItensPedido) {
+			this.setTotal(this.total.add(item.getProduto().getValor().multiply(new BigDecimal(item.getQuantidade()))));
+		}
+		
 		return total;
 	}
 	

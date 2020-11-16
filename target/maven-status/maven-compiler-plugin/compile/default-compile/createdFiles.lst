@@ -1,0 +1,15 @@
+br\com\chefAdmin\dao\ProdutoDao.class
+br\com\chefAdmin\util\SimpleEntityConverter.class
+br\com\chefAdmin\entity\Usuario.class
+br\com\chefAdmin\dao\CategoriaDao.class
+br\com\chefAdmin\entity\Categoria.class
+br\com\chefAdmin\entity\Pagamento.class
+br\com\chefAdmin\bean\CarrinhoBean.class
+br\com\chefAdmin\entity\Produto.class
+br\com\chefAdmin\entity\ItemPedido.class
+br\com\chefAdmin\entity\Mesa.class
+br\com\chefAdmin\util\AbstractDAO.class
+br\com\chefAdmin\entity\Pedido.class
+br\com\chefAdmin\util\BaseEntity.class
+br\com\chefAdmin\entity\Cliente.class
+br\com\chefAdmin\bean\ItemPedidoBean.class

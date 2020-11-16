@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+					  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/template/main.xhtml">
+
+	<ui:define name="headHtml">
+
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="css/smartadmin-rtl.min.css" />
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/font-awesome.min.css" />
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/smartadmin-production-plugins.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/smartadmin-production.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/smartadmin-skins.min.css" />
+
+		<!-- SmartAdmin RTL Support  -->
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/smartadmin-rtl.min.css" />
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="css/demo.min.css" />
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon"
+			href="#{request.contextPath}/resource/img/favicon/favicon.ico"
+			type="image/x-icon" />
+		<link rel="icon"
+			href="#{request.contextPath}/resource/img/favicon/favicon.ico"
+			type="image/x-icon" />
+
+		<!-- GOOGLE FONT -->
+		<link rel="stylesheet"
+			href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" />
+
+		<link href="#{request.contextPath}/resource/css/all.min.css"
+			rel="stylesheet" />
+
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		<link rel="stylesheet" type="text/css" media="screen"
+			href="#{request.contextPath}/resource/css/style_btn.css" />
+
+		<link rel="stylesheet"
+			href="#{request.contextPath}/resource/css/vitrineDestaquinho.css" />
+
+		<link rel="stylesheet"
+			href="#{request.contextPath}/resource/css/livroNaVitrine.css" />
+
+	</ui:define>
+
+	<ui:define name="conteudo">
+
+		<f:event type="preRenderView"
+			listener="#{realizaPedidoBean.carregaListas()}" />
+
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+				<h1 class="page-title txt-color-blueDark">
+					<i class="fa fa-shopping-cart"></i> Realizar Pedido
+				</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- NEW COL START -->
+			<article class="col-sm-12 col-md-12 col-lg-12"> <!-- Widget ID (each widget will need unique ID)-->
+			<div class="jarviswidget" id="wid-id-1"
+				data-widget-colorbutton="false" data-widget-editbutton="false"
+				data-widget-custombutton="false">
+				<header
+					style="background:#4c4f53; border-color:#45474b; color:#fff;">
+				<span class="widget-icon"> <i class="fa fa-edit"
+					style="margin-top: 10px;"></i>
+				</span>
+				<h2>Menu</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+
+						<div id="container" class="container">
+
+
+							<button id="27_faq" class="btn btn1" onclick="esconde()">Entradas</button>
+							<button class="btn btn2">Saladas</button>
+							<button class="btn btn3">Pratos</button>
+							<button class="btn btn4">Bebidas</button>
+
+						</div>
+
+						<section id="27" style="display: none;">
+							<ui:repeat
+								value="#{realizaPedidoBean.listaProdutoCategoria.get('Pratos')}"
+								var="produto">
+								<div class="col-sm-6 col-md-6 col-lg-6">
+									<!-- product -->
+									<div class="product-content product-wrap clearfix">
+										<div class="row">
+											<div class="col-md-5 col-sm-12 col-xs-12">
+												<div class="product-image">
+													<img src="#{produto.foto}"
+														alt="#{produto.nome}"
+														title="#{produto.nome}"
+														class="img-responsive"
+														style="height: 250px; width: 330px;" />
+												</div>
+											</div>
+											<div class="col-md-7 col-sm-12 col-xs-12">
+												<div class="product-deatil">
+													<h5 class="name">
+														<a href="#"> #{produto.nome} </a>
+													</h5>
+													<p class="price-container">
+														<span>#{produto.valor}</span>
+													</p>
+													<span class="tag1"></span>
+												</div>
+												<div class="description">
+													<p>#{produto.descricao}</p>
+												</div>
+												<div class="product-info smart-form">
+													<div class="row">
+														<h:form>
+															<h:commandLink class="btn btn-success btn-lg" action="#{itemPedidoDetalheBean.addItemCarrinho()}">
+																<i class="fa fa-shopping-cart"> COMPRAR </i>
+															</h:commandLink>
+														</h:form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- end product -->
+								</div>
+							</ui:repeat>
+						</section>
+
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+			<!-- end widget --> </article>
+			<!-- END COL -->
+		</div>
+
+	</ui:define>
+
+	<ui:define name="script-area">
+
+		<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/autofill/2.2.0/js/autoFill.bootstrap.js"></script>
+
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.bootstrap.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.colVis.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.flash.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.print.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/colreorder/1.3.3/js/dataTables.colReorder.js"></script>
+		<script src="#{request.contextPath}/resource/js/datatable.js"></script>
+
+		<script type="text/javascript">
+			function esconde() {
+				var switchText = document.getElementById("27_faq");
+				var elToggled = document.getElementById("27");
+				elToggled.style.display = "block";
+				switchText.addEventListener("click", function() {
+					if (elToggled.style.display == "block") {
+						elToggled.style.display = "none";
+					} else {
+						elToggled.style.display = "block";
+					}
+				}, false);
+			}
+		</script>
+
+	</ui:define>
+
+</ui:composition>
+
+</html>

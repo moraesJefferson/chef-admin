@@ -1,22 +1,25 @@
 package br.com.chefAdmin.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import br.com.chefAdmin.util.BaseEntity;
-import br.com.chefAdmin.util.Categoria;
 
 @Entity
-public class Produto extends BaseEntity{
+@Cacheable
+public class Produto extends BaseEntity implements Serializable{
 
-	private static final long serialVersionUID = -5605089871923243063L;
+	private static final long serialVersionUID = -3315235644723143825L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -27,7 +30,8 @@ public class Produto extends BaseEntity{
 	
 	private BigDecimal valor;
 	
-	@Enumerated(EnumType.STRING)
+	@ManyToOne
+    @JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 	
 	@Column(columnDefinition = "text")
@@ -65,14 +69,6 @@ public class Produto extends BaseEntity{
 		this.valor = valor;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
 	public String getFoto() {
 		return foto;
 	}
@@ -80,5 +76,12 @@ public class Produto extends BaseEntity{
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 }

@@ -23,6 +23,15 @@
     width: 15em;
 }
 
+.value {
+        font-weight: bold;
+    }
+     
+.ui-carousel {
+        margin-bottom: 20px;
+    }
+
+
 input,
 select,
 textarea,
@@ -64,5 +73,6 @@ html {
 .rich-message-label{
 	color: #F00
 }
+
 
 

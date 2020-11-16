@@ -4,13 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich" >
-<head>
-	<ui:insert name="headHtml">
-	
-	</ui:insert>	
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>	
 	
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -22,6 +17,8 @@
 		<meta name="author" content=""/>
 			
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css" />
 
 		<!-- Basic Styles -->
 		<link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/resource/css/bootstrap.min.css"/>
@@ -35,8 +32,9 @@
 		<!-- SmartAdmin RTL Support  -->
 		<link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/resource/css/smartadmin-rtl.min.css"/>
 
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css" />
 		
-		<link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/resource/css/style.css"/>
 		
 		<!-- FAVICONS -->
 		<link rel="shortcut icon" href="#{request.contextPath}/resource/img/favicon/favicon.ico" type="image/x-icon"/>
@@ -44,10 +42,20 @@
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"/>
+		
+		 <link href="#{request.contextPath}/resource/css/all.min.css" rel="stylesheet" />
+  		<!-- CSS Files -->
+ 		 <link href="#{request.contextPath}/resource/css/argon-dashboard.css?v=1.1.1" rel="stylesheet" />
+ 		 
+ 		 <link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/resource/css/style.css"/>
+		
+		<ui:insert name="headHtml">
+	
+		</ui:insert>
 
-</head>
+</h:head>
 
-<body class="desktop-detected pace-done smart-style-1">
+<h:body class="desktop-detected pace-done smart-style-1">
 
 		<!-- HEADER -->
 		<header id="header">
@@ -59,19 +67,24 @@
 				white;margin-top: -15px; font-size: 14px; margin-left: 10px;margin-top:10px;"><b>CHEF-ADMIN</b></span> </span>
 				<!-- END AJAX-DROPDOWN -->
 			</div>
-
-
-			<!-- pulled right: nav area -->
-			<div class="pull-right">
+		
+				 <h:panelGroup rendered="#{carrinhoBean.pedido.listaItensPedido.size() > 0 }" >
+						<div class="row" style="padding: 5px; margin-top: 5px; float:right; position:relative; right: 80px;">
+							<a href="#{carrinhoBean.irParaCarinho()}" class="btn bg-color-red txt-color-white shop-btn" style="width: 30px; height: 30px;">
+								<i class="fa fa-shopping-cart fa-4" style="margin-right: 10px; margin-left: -5px;"></i>
+								<span class="air air-top-right label-danger txt-color-white padding-5">#{carrinhoBean.pedido.listaItensPedido.size()}</span>
+							</a>					
+						</div>
+				</h:panelGroup>
 				
-				<!-- collapse menu button -->
-				<div id="hide-menu" class="btn-header pull-right">
-					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder" style="padding-top: 3px;"></i></a> </span>
+				<!-- pulled right: nav area -->
+				<div class="pull-right">				
+					<!-- collapse menu button -->
+					<div id="hide-menu" class="btn-header pull-right">
+						<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder" style="padding-top: 3px;"></i></a> </span>
+					</div>
+					<!-- end collapse menu -->						
 				</div>
-				<!-- end collapse menu -->
-				
-								
-			</div>
 			<!-- end pulled right: nav area -->
 
 		</header>
@@ -288,5 +301,5 @@
 		<ui:insert name="script-area">
 		
 		</ui:insert>
-	</body>
+	</h:body>
 </html>
