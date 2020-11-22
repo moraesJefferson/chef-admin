@@ -3,19 +3,16 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-  <display-name>chef-admin</display-name>
+  <display-name>chef-admin-app</display-name>
+  
+  <welcome-file-list>
+		<welcome-file>/module/home.xhtml</welcome-file>
+	</welcome-file-list>
   
   <context-param>
 		<param-name>javax.faces.CONFIG_FILES</param-name>
 		<param-value>/WEB-INF/faces-config.xml</param-value>
 	</context-param>
-  
-  <resource-ref>
-		<description>DB Connection</description>
-		<res-ref-name>jdbc/ChefAdmin</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
   
   <listener>
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
