@@ -1,5 +1,6 @@
 package br.com.chefAdmin.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +8,13 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.transaction.Transactional;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 
 import br.com.chefAdmin.dao.ProdutoDao;
 import br.com.chefAdmin.entity.Produto;
-import java.io.Serializable;
+import br.com.chefAdmin.tx.Transacional;
 
 @Named
 @SessionScoped
@@ -44,7 +44,7 @@ public class ItemPedidoBean implements Serializable {
 		}
 	}
 	
-	@Transactional
+	@Transacional
 	public void carregaListas() {
 		try {
 			this.listaProdutoCategoria = ArrayListMultimap.create();
@@ -59,13 +59,6 @@ public class ItemPedidoBean implements Serializable {
 			e.printStackTrace();
 		}
 	}
-	
-	public void carregaItensCategoria(String categoria) {
-		if(this.listaProdutoCategoria.containsKey(categoria)) {
-			this.listaProduto = this.listaProdutoCategoria.get(categoria);
-		}
-	}
-
 
 	public ListMultimap<String, Produto> getListaProdutoCategoria() {
 		return listaProdutoCategoria;

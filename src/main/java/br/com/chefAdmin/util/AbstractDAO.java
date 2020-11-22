@@ -3,9 +3,8 @@ package br.com.chefAdmin.util;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import javax.persistence.TypedQuery;
 
 
@@ -13,22 +12,10 @@ public abstract class AbstractDAO<T, PK> implements Serializable {
 
 	private static final long serialVersionUID = 4304870101163862398L;
 	
-	@PersistenceContext(unitName = "chef-admin", type = PersistenceContextType.TRANSACTION)
-	private EntityManager em;
-	
-	public EntityManager getEm() {
-		return em;
-	}
-
-	public void setEm(EntityManager em) {
-		this.em = em;
-	}
-
+	@Inject
+	EntityManager em;
 	private final Class<T> classe;
 
-	public EntityManager entityManager() {
-		return em;
-	}
 
 	public AbstractDAO(Class<T> classe) {
 		this.classe = classe;
@@ -62,5 +49,13 @@ public abstract class AbstractDAO<T, PK> implements Serializable {
 		TypedQuery<Long> query = em.createQuery(hql, Long.class);
 		Long count = query.getSingleResult();
 		return count;
+	}
+
+	public EntityManager getEm() {
+		return em;
+	}
+
+	public void setEm(EntityManager em) {
+		this.em = em;
 	}
 }

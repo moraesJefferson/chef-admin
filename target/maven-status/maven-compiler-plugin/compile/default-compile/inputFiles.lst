@@ -1,10 +1,14 @@
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Usuario.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Pagamento.java
+C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\util\ConnectionPool.java
+C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\util\JPAUtil.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Mesa.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\ItemPedido.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\bean\ItemPedidoBean.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\util\AbstractDAO.java
+C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\tx\Transacional.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Cliente.java
+C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\dao\PedidoDao.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Pedido.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Categoria.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\bean\CarrinhoBean.java
@@ -12,4 +16,5 @@ C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdm
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\dao\ProdutoDao.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\entity\Produto.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\dao\CategoriaDao.java
+C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\tx\GerenciadorDeTransacao.java
 C:\Users\jeffe\Documents\dev\repositorio\chef-admin\src\main\java\br\com\chefAdmin\util\SimpleEntityConverter.java

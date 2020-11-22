@@ -7,13 +7,13 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.transaction.Transactional;
 
 import br.com.chefAdmin.dao.PedidoDao;
 import br.com.chefAdmin.dao.ProdutoDao;
 import br.com.chefAdmin.entity.ItemPedido;
 import br.com.chefAdmin.entity.Pedido;
 import br.com.chefAdmin.entity.Produto;
+import br.com.chefAdmin.tx.Transacional;
 
 @Named
 @SessionScoped
@@ -61,7 +61,7 @@ public class CarrinhoBean implements Serializable{
 		this.pedido.setTotal(new BigDecimal(0));
 	}
 	
-	@Transactional
+	@Transacional
 	public void finalizar() {
 		pedidoDao.save(pedido);
 		limpaCarrinho();
