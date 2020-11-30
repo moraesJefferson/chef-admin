@@ -10,6 +10,7 @@ import org.hibernate.annotations.QueryHints;
 
 import br.com.chefAdmin.entity.Produto;
 import br.com.chefAdmin.util.AbstractDAO;
+import br.com.chefAdmin.vo.QuantidadeVO;
 
 
 public class ProdutoDao extends AbstractDAO<Produto, Long>{
@@ -31,6 +32,16 @@ public class ProdutoDao extends AbstractDAO<Produto, Long>{
 		
 		return query.getResultList();
 		
-	}	
+	}
 	
+	public List<QuantidadeVO> consultaQuantidade(){
+		String hql = "select new br.com.chefAdmin.vo.QuantidadeVO (count(i.produto) as qtd, p.nome as nome) from produto p, itempedido i "
+				+ "where i.produto.id = p.id "
+				+ "group by nome "
+				+ "order by qtd desc "
+				+ "limit 5 ";
+		
+		TypedQuery<QuantidadeVO> query = em.createQuery(hql, QuantidadeVO.class);	
+		return query.getResultList();
+	}
 }

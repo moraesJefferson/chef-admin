@@ -6,7 +6,7 @@
   <display-name>chef-admin-app</display-name>
   
   <welcome-file-list>
-		<welcome-file>/module/home.xhtml</welcome-file>
+		<welcome-file>module/home.xhtml</welcome-file>
 	</welcome-file-list>
   
   <context-param>

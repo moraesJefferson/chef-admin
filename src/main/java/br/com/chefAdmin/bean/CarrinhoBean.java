@@ -5,11 +5,12 @@ import java.math.BigDecimal;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletResponse;
 
 import br.com.chefAdmin.dao.PedidoDao;
-import br.com.chefAdmin.dao.ProdutoDao;
 import br.com.chefAdmin.entity.ItemPedido;
 import br.com.chefAdmin.entity.Pedido;
 import br.com.chefAdmin.entity.Produto;
@@ -19,21 +20,16 @@ import br.com.chefAdmin.tx.Transacional;
 @SessionScoped
 public class CarrinhoBean implements Serializable{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3386077676323732600L;
+	private static final long serialVersionUID = -5735477162129853159L;
 
-	@Inject
-	ProdutoDao produtoDao;
-	
 	@Inject
 	PedidoDao pedidoDao;
 	
+	@Inject
+	private FacesContext facesContext;
+	
 	private Pedido pedido;
 	
-	private Long id;
-
 	private Produto produto;
 	
 	private String observacao;
@@ -62,8 +58,18 @@ public class CarrinhoBean implements Serializable{
 	}
 	
 	@Transacional
-	public void finalizar() {
-		pedidoDao.save(pedido);
+	public void finalizar() {	
+		try {
+			pedidoDao.save(pedido);
+			
+//			String contextName = facesContext.getExternalContext().getRequestContextPath();
+//			HttpServletResponse response = (HttpServletResponse) facesContext.getExternalContext().getResponse();
+//			response.setStatus(HttpServletResponse.SC_TEMPORARY_REDIRECT);			
+//			response.setHeader("Location", contextName + "/" + "services/pagamento?uuid=" + pedido.getUuid());
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		limpaCarrinho();
 	}
 	
@@ -84,14 +90,6 @@ public class CarrinhoBean implements Serializable{
 	
 	public String irParaInicio() {
 		return "inicio";
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Produto getProduto() {

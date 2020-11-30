@@ -110,13 +110,111 @@
 						<div id="container" class="container">
 
 
-							<button id="27_faq" class="btn btn1" onclick="esconde()">Entradas</button>
-							<button class="btn btn2">Saladas</button>
-							<button class="btn btn3">Pratos</button>
-							<button class="btn btn4">Bebidas</button>
+							<button id="25_faq" class="btn btn1" onclick="esconde25()">Entradas</button>
+							<button id="26_faq" class="btn btn2" onclick="esconde26()">Saladas</button>
+							<button id="27_faq" class="btn btn3" onclick="esconde27()">Pratos</button>
+							<button id="28_faq" class="btn btn4" onclick="esconde28()">Sobremesas</button>
+							<button id="29_faq" class="btn btn4" onclick="esconde29()">Bebidas</button>
 
 						</div>
-
+						
+						
+						<section id="25" style="display: none;">
+							<h:form>
+								<h:messages />
+								<ui:repeat
+									value="#{itemPedidoBean.listaProdutoCategoria.get('Entradas')}"
+									var="produto">
+									<div class="col-sm-6 col-md-6 col-lg-6">
+										<!-- product -->
+										<div class="product-content product-wrap clearfix">
+											<div class="row">
+												<div class="col-md-5 col-sm-12 col-xs-12">
+													<div class="product-image">
+														<img src="#{produto.foto}"
+															alt="#{produto.nome}"
+															title="#{produto.nome}"
+															class="img-responsive"
+															style="height: 250px; width: 330px;" />
+													</div>
+												</div>
+												<div class="col-md-7 col-sm-12 col-xs-12">
+													<div class="product-deatil">
+														<h5 class="name">
+															 #{produto.nome} 
+														</h5>
+														<p class="price-container">
+															<span><b>#{produto.valor}</b></span>
+														</p>
+														<span class="tag1"></span>
+													</div>
+													<div class="description">
+														<p>#{produto.descricao}</p>
+													</div>
+													<div class="product-info smart-form">
+														<div class="row">
+															<h:commandLink id="carrinho" immediate="true" class="btn btn-success btn-lg" action="#{carrinhoBean.addItemPedidoCarrinho(produto)}" value="COMPRAR" >
+																<i class="fa fa-shopping-cart"></i>
+															</h:commandLink>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- end product -->
+									</div>
+								</ui:repeat>
+							</h:form>
+						</section>
+						
+						<section id="26" style="display: none;">
+							<h:form>
+								<h:messages />
+								<ui:repeat
+									value="#{itemPedidoBean.listaProdutoCategoria.get('Saladas')}"
+									var="produto">
+									<div class="col-sm-6 col-md-6 col-lg-6">
+										<!-- product -->
+										<div class="product-content product-wrap clearfix">
+											<div class="row">
+												<div class="col-md-5 col-sm-12 col-xs-12">
+													<div class="product-image">
+														<img src="#{produto.foto}"
+															alt="#{produto.nome}"
+															title="#{produto.nome}"
+															class="img-responsive"
+															style="height: 250px; width: 330px;" />
+													</div>
+												</div>
+												<div class="col-md-7 col-sm-12 col-xs-12">
+													<div class="product-deatil">
+														<h5 class="name">
+															 #{produto.nome} 
+														</h5>
+														<p class="price-container">
+															<span><b>#{produto.valor}</b></span>
+														</p>
+														<span class="tag1"></span>
+													</div>
+													<div class="description">
+														<p>#{produto.descricao}</p>
+													</div>
+													<div class="product-info smart-form">
+														<div class="row">
+															<h:commandLink id="carrinho" immediate="true" class="btn btn-success btn-lg" action="#{carrinhoBean.addItemPedidoCarrinho(produto)}" value="COMPRAR" >
+																<i class="fa fa-shopping-cart"></i>
+															</h:commandLink>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- end product -->
+									</div>
+								</ui:repeat>
+							</h:form>
+						</section>			
+							
 						<section id="27" style="display: none;">
 							<h:form>
 								<h:messages />
@@ -164,8 +262,102 @@
 								</ui:repeat>
 							</h:form>
 						</section>
+						
+						<section id="28" style="display: none;">
+							<h:form>
+								<h:messages />
+								<ui:repeat
+									value="#{itemPedidoBean.listaProdutoCategoria.get('Sobremesas')}"
+									var="produto">
+									<div class="col-sm-6 col-md-6 col-lg-6">
+										<!-- product -->
+										<div class="product-content product-wrap clearfix">
+											<div class="row">
+												<div class="col-md-5 col-sm-12 col-xs-12">
+													<div class="product-image">
+														<img src="#{produto.foto}"
+															alt="#{produto.nome}"
+															title="#{produto.nome}"
+															class="img-responsive"
+															style="height: 250px; width: 330px;" />
+													</div>
+												</div>
+												<div class="col-md-7 col-sm-12 col-xs-12">
+													<div class="product-deatil">
+														<h5 class="name">
+															 #{produto.nome} 
+														</h5>
+														<p class="price-container">
+															<span><b>#{produto.valor}</b></span>
+														</p>
+														<span class="tag1"></span>
+													</div>
+													<div class="description">
+														<p>#{produto.descricao}</p>
+													</div>
+													<div class="product-info smart-form">
+														<div class="row">
+															<h:commandLink id="carrinho" immediate="true" class="btn btn-success btn-lg" action="#{carrinhoBean.addItemPedidoCarrinho(produto)}" value="COMPRAR" >
+																<i class="fa fa-shopping-cart"></i>
+															</h:commandLink>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- end product -->
+									</div>
+								</ui:repeat>
+							</h:form>
+						</section>
 
-
+						<section id="29" style="display: none;">
+							<h:form>
+								<h:messages />
+								<ui:repeat
+									value="#{itemPedidoBean.listaProdutoCategoria.get('Bebidas')}"
+									var="produto">
+									<div class="col-sm-6 col-md-6 col-lg-6">
+										<!-- product -->
+										<div class="product-content product-wrap clearfix">
+											<div class="row">
+												<div class="col-md-5 col-sm-12 col-xs-12">
+													<div class="product-image">
+														<img src="#{produto.foto}"
+															alt="#{produto.nome}"
+															title="#{produto.nome}"
+															class="img-responsive"
+															style="height: 250px; width: 330px;" />
+													</div>
+												</div>
+												<div class="col-md-7 col-sm-12 col-xs-12">
+													<div class="product-deatil">
+														<h5 class="name">
+															 #{produto.nome} 
+														</h5>
+														<p class="price-container">
+															<span><b>#{produto.valor}</b></span>
+														</p>
+														<span class="tag1"></span>
+													</div>
+													<div class="description">
+														<p>#{produto.descricao}</p>
+													</div>
+													<div class="product-info smart-form">
+														<div class="row">
+															<h:commandLink id="carrinho" immediate="true" class="btn btn-success btn-lg" action="#{carrinhoBean.addItemPedidoCarrinho(produto)}" value="COMPRAR" >
+																<i class="fa fa-shopping-cart"></i>
+															</h:commandLink>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- end product -->
+									</div>
+								</ui:repeat>
+							</h:form>
+						</section>
 					</div>
 					<!-- end widget content -->
 
@@ -208,18 +400,68 @@
 			src="https://cdn.datatables.net/colreorder/1.3.3/js/dataTables.colReorder.js"></script>
 		<script src="#{request.contextPath}/resource/js/datatable.js"></script>
 
-		<script type="text/javascript">
-			function esconde() {
+		<script type="text/javascript"> 
+			
+			function esconde25() {
+				var switchText = document.getElementById("25_faq");
+				var elToggled = document.getElementById("25");
+				elToggled.style.display = "block";
+				switchText.addEventListener("click", function() {
+					escondeOutros(elToggled);
+				}, false);
+			}
+			
+			function esconde26() {
+				var switchText = document.getElementById("26_faq");
+				var elToggled = document.getElementById("26");
+				elToggled.style.display = "block";
+				switchText.addEventListener("click", function() {
+					escondeOutros(elToggled);
+				}, false);
+			}
+			
+			function esconde27() {
 				var switchText = document.getElementById("27_faq");
 				var elToggled = document.getElementById("27");
 				elToggled.style.display = "block";
 				switchText.addEventListener("click", function() {
-					if (elToggled.style.display == "block") {
-						elToggled.style.display = "none";
-					} else {
-						elToggled.style.display = "block";
-					}
+					escondeOutros(elToggled);
 				}, false);
+			}
+			
+			function esconde28() {
+				var switchText = document.getElementById("28_faq");
+				var elToggled = document.getElementById("28");
+				elToggled.style.display = "block";
+				switchText.addEventListener("click", function() {
+					escondeOutros(elToggled);
+				}, false);
+			}
+			
+			function esconde29() {
+				var switchText = document.getElementById("29_faq");
+				var elToggled = document.getElementById("29");
+				elToggled.style.display = "block";
+				switchText.addEventListener("click", function() {
+					escondeOutros(elToggled);
+				}, false);
+			}
+			
+			function escondeOutros(elToggled){
+				
+				var ids = [document.getElementById("25"), document.getElementById("26"),document.getElementById("27"),document.getElementById("28"),document.getElementById("29")];
+				
+				for(var i = 0; i &lt;ids.length; i++){
+					if(elToggled != ids[i]){
+						 ids[i].style.display = "none";
+					}else{
+						if(ids[i].style.display == "none"){
+							ids[i].style.display = "block";
+						}else{
+							ids[i].style.display = "none";
+						}
+					}
+				}
 			}
 		</script>
 

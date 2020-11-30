@@ -23,6 +23,18 @@
 	      <to-view-id>/module/home.xhtml</to-view-id>
 	      <redirect/>
 	    </navigation-case>
+	    
+	    <navigation-case>
+	      <from-outcome>historico</from-outcome>
+	      <to-view-id>/module/historico.xhtml</to-view-id>
+	      <redirect/>
+	    </navigation-case>
+	    
+	    <navigation-case>
+	      <from-outcome>visao</from-outcome>
+	      <to-view-id>/module/visao.xhtml</to-view-id>
+	      <redirect/>
+	    </navigation-case>
   	</navigation-rule>
 	 
 					

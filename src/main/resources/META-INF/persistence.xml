@@ -24,34 +24,14 @@
 	     <property name="hibernate.show_sql" value="true" />
 		 <property name="hibernate.format_sql" value="true" />
 		 
-		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-156-85-145.compute-1.amazonaws.com:5432/deoa2nprgjl4lb?sslmode=require" />
-		 <property name="javax.persistence.jdbc.user" value="gwtzjagpdsrxpc" />
-		 <property name="javax.persistence.jdbc.password" value="ff021e78840bf7e233c8d858836978282f7f66e7978b69d3f2c95f7496f86e4c" />
+<!-- 		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-156-85-145.compute-1.amazonaws.com:5432/deoa2nprgjl4lb?sslmode=require" /> -->
+<!-- 		 <property name="javax.persistence.jdbc.user" value="gwtzjagpdsrxpc" /> -->
+<!-- 		 <property name="javax.persistence.jdbc.password" value="ff021e78840bf7e233c8d858836978282f7f66e7978b69d3f2c95f7496f86e4c" /> -->
 		  	 
-<!-- 		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/chefadmin" /> -->
-<!-- 		 <property name="javax.persistence.jdbc.user" value="postgres" /> -->
-<!-- 		 <property name="javax.persistence.jdbc.password" value="060395" /> -->
+		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/chefadmin" />
+		 <property name="javax.persistence.jdbc.user" value="postgres" />
+		 <property name="javax.persistence.jdbc.password" value="060395" />
 		 
-		 
-<!-- 		 <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> -->
-<!-- 	     <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> -->
-	     
-<!--  	     <property name="hibernate.hbm2ddl.auto" value="none"/> -->
-<!-- 	     <property name="hibernate.show_sql" value="true" /> -->
-<!-- 		 <property name="hibernate.format_sql" value="true" /> -->
-<!-- 		 <property name="hibernate.archive.autodetection" value="class"/> -->
-		  
-<!-- 		 <property name="hibernate.default_schema" value="chef-admin" /> -->
-
-<!-- 		 <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" /> -->
-<!-- 		 <property name="hibernate.connection.isolation" value="2" /> -->
-<!-- 		 <property name="hibernate.current_session_context_class" value="jta"/> -->
-		 
-<!-- 		 <property name="hibernate.transaction.flush_before_completion" value="true"/> -->
-<!--       	 <property name="hibernate.connection.characterEncoding" value="UTF-8" /> -->
-<!-- 	  	 <property name="hibernate.connection.charSet" value="UTF-8" />   -->
-  
-  
     </properties>
   </persistence-unit>
 </persistence>
