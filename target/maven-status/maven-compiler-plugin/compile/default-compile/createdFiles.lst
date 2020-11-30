@@ -11,6 +11,7 @@ br\com\chefAdmin\entity\Pedido.class
 br\com\chefAdmin\util\BaseEntity.class
 br\com\chefAdmin\entity\Cliente.class
 br\com\chefAdmin\entity\Usuario.class
+br\com\chefAdmin\vo\QuantidadeVO.class
 br\com\chefAdmin\dao\CategoriaDao.class
 br\com\chefAdmin\tx\Transacional.class
 br\com\chefAdmin\bean\PedidoBean.class

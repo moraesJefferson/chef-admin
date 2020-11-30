@@ -24,13 +24,13 @@
 	     <property name="hibernate.show_sql" value="true" />
 		 <property name="hibernate.format_sql" value="true" />
 		 
-<!-- 		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-156-85-145.compute-1.amazonaws.com:5432/deoa2nprgjl4lb?sslmode=require" /> -->
-<!-- 		 <property name="javax.persistence.jdbc.user" value="gwtzjagpdsrxpc" /> -->
-<!-- 		 <property name="javax.persistence.jdbc.password" value="ff021e78840bf7e233c8d858836978282f7f66e7978b69d3f2c95f7496f86e4c" /> -->
+		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-156-85-145.compute-1.amazonaws.com:5432/deoa2nprgjl4lb?sslmode=require" />
+		 <property name="javax.persistence.jdbc.user" value="gwtzjagpdsrxpc" />
+		 <property name="javax.persistence.jdbc.password" value="ff021e78840bf7e233c8d858836978282f7f66e7978b69d3f2c95f7496f86e4c" />
 		  	 
-		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/chefadmin" />
-		 <property name="javax.persistence.jdbc.user" value="postgres" />
-		 <property name="javax.persistence.jdbc.password" value="060395" />
+<!-- 		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/chefadmin" /> -->
+<!-- 		 <property name="javax.persistence.jdbc.user" value="postgres" /> -->
+<!-- 		 <property name="javax.persistence.jdbc.password" value="060395" /> -->
 		 
     </properties>
   </persistence-unit>
