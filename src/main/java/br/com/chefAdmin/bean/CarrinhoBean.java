@@ -2,6 +2,7 @@ package br.com.chefAdmin.bean;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Calendar;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -60,6 +61,7 @@ public class CarrinhoBean implements Serializable{
 	@Transacional
 	public void finalizar() {	
 		try {
+			pedido.setData(Calendar.getInstance().getTime());
 			pedidoDao.save(pedido);
 			
 //			String contextName = facesContext.getExternalContext().getRequestContextPath();

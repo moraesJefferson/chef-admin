@@ -113,12 +113,19 @@
 										var="pedido"
 										class="table table-striped table-bordered table-hover"
 										width="100%">
-										<h:column id="imei" headerClass="col-situacao">
+										<h:column id="uuid" headerClass="col-situacao">
 											<f:facet name="header">Código da Compra</f:facet>
 											#{pedido.uuid}						
 										</h:column>
 										
-										<h:column id="numero" headerClass="col-situacao">
+										<h:column id="data" headerClass="col-situacao">
+											<f:facet name="header">Data da Compra</f:facet>
+											<h:outputText value="#{pedido.data}" >
+												<f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="GMT-3"/>												
+											</h:outputText>					
+										</h:column>
+										
+										<h:column id="total" headerClass="col-situacao">
 											<f:facet name="header">Valor do Pedido</f:facet>
 											#{pedido.total}						
 										</h:column>

@@ -2,6 +2,7 @@ package br.com.chefAdmin.entity;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import br.com.chefAdmin.util.BaseEntity;
 
@@ -34,6 +37,9 @@ public class Pedido extends BaseEntity{
 	private String uuid;
 	
 	private BigDecimal total;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data;
 	
 	@PrePersist
 	public void prePersist() {
@@ -86,6 +92,14 @@ public class Pedido extends BaseEntity{
 		return listaItensPedido;
 	}
 	
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
 	public void add(ItemPedido itemPedido) {
 		this.listaItensPedido.add(itemPedido);
 	}
